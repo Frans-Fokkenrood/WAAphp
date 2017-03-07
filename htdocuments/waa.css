@@ -1,0 +1,70 @@
+body {
+	font-family: Verdana, Sans-Serif;
+	background-color: #cccccc;
+	color: #000000;
+	margin: 0px;
+	width: 100%;
+}
+
+h1 {
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	margin: 0px 0px 48px 0px;
+}	
+td.label {
+	text-align: right;
+	padding: 4px 8px;
+	font-size: 18px;
+}
+td.invoer {
+}
+td.invoer input {
+	width: 360px;
+	height: 32px;
+	font-size: 18px;
+	padding: 0px 4px;
+}
+
+#header, #footer {
+	background-color: #0000ff;
+	color: #ffffff;
+	border-style: solid;
+	border-color: #000000;
+	border-width: 1px 0px;
+	line-height: 32px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	clear: both;
+}
+
+#content {
+	padding: 12px 8px;
+}
+
+#tabbalk {
+    border: 2px solid #808080;
+    background-color: #408080;
+    height: 49px;
+    margin: 0px 0px 32px 0px;
+}
+
+#tabbalk a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+#tabbalk a:hover {
+    background-color: #dddddd;
+    color: #400040;
+}
