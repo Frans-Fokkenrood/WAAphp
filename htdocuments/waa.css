@@ -12,9 +12,21 @@ h1 {
 
 h2 {
 	text-align: center;
-	color: #800080;
+	color: #0000ff;
 	font-size: 28px;
 	font-weight: bold;
+	margin: 36px 0px;
+}
+
+input {
+	height: 36px;
+	text-align: center;
+	color: #0000ff;
+	font-size: 24px;	
+	font-weight: bold;
+	margin: 24px 0px;
+	padding: 0px 16px;
+	border-radius: 8px;
 }
 
 table {
