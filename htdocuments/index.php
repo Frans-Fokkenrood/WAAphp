@@ -2,25 +2,25 @@
 	require_once 'header.php';
 	require_once 'tabbalk.php';
 	
-	if (isset($_POST['moment'])) {
-		$moment = isset($_POST['vandaag']) ? $_POST['vandaag'] : '';
+	if (isset($_POST['vandaag'])) {
+		$moment = $_POST['vandaag'];
 	} else {
-		$moment = date('Y-m-d');
+		$moment = isset($_POST['moment']) ? $_POST['moment'] : date('Y-m-d');
 	}	// end if
-?>
-<h1>Openingsscherm dienstverlening WAA</h1>
-<form id=vandaag action="" method="post">
-<?php
+	
+	echo '<h1>Openingsscherm dienstverlening WAA</h1>' . "\n";
+	echo '<form id=phpForm action="" method="post">' . "\n";
+
 	if ($moment == '') {
 		echo '<h1><input type="text" name="vandaag"/>' . "\n";
 		echo '<input type="submit" value="Zet datum"/></h1>' . "\n";
 	}	// end if
-?>
-<input type="hidden" name="moment" value="<?php echo $moment; ?>"/>
-</form>
-<?php
+
+	echo '<input type="hidden" name="moment" value="' . $moment . '"/>' . "\n";
+	echo '</form>' . "\n";
+
 	if ($moment != '') {
-		echo '<h2 onclick="vandaag.submit();">Vandaag is ' . $moment . '</h2>' . "\n";
+		echo '<h2 onclick="phpForm.moment.value=\'\';phpForm.submit();">Vandaag is ' . $moment . '</h2>' . "\n";
 	}	// end if
 	
  	$socket = socket_create(AF_INET, SOCK_STREAM, 0) or die("Could not create socket\n");

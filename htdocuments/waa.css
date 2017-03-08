@@ -24,7 +24,7 @@ input {
 	color: #0000ff;
 	font-size: 24px;	
 	font-weight: bold;
-	margin: 24px 0px;
+	margin: 4px 0px;
 	padding: 0px 16px;
 	border-radius: 8px;
 }
@@ -38,13 +38,18 @@ td.label {
 	padding: 4px 8px;
 	font-size: 18px;
 }
-td.invoer {
-}
-td.invoer input {
-	width: 360px;
-	height: 32px;
+td.fout {
+	color: #ff0000;
+	font-weight: bold;
 	font-size: 18px;
-	padding: 0px 4px;
+}
+td input {
+	width: 360px;
+	text-align: left;
+}
+td input[type='submit'] {
+	width: 200px;
+	text-align: center;
 }
 
 #header, #footer {

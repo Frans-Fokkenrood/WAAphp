@@ -1,7 +1,7 @@
 <div id="tabbalk">
-<a href="index.php">Home</a>
-<a href="werknemer.php">Werknemer</a>
-<a href="werkgever.php">Werkgever</a>
-<a href="arbeidsovereenkomst.php">Arbeidsovereenkomst</a>
-<a href="stop.php">STOP</a>
+<a onclick="phpForm.action='index.php';phpForm.submit();">Home</a>
+<a onclick="phpForm.action='werknemer.php';phpForm.submit();">Werknemer</a>
+<a onclick="phpForm.action='werkgever.php';phpForm.submit();">Wergevmer</a>
+<a onclick="phpForm.action='arbeidsovereenkomst.php.php';phpForm.submit();">Arbeidsovereenkomst</a>
+<a onclick="phpForm.action='stop.php';phpForm.submit();">STOP</a>
 </div>
