@@ -27,7 +27,7 @@
  	socket_connect($socket, "localhost", 8888) or die("Could not connect to socket\n");
 
  	//	Write Request:
- 	$output = "Hello PHP and Java worlds, this is a message from XAMPP\n" . "\n";
+ 	$output = "Hello PHP and Java worlds, \nthis is a message from XAMPP\n" . "\n";
  	socket_write($socket, $output) or die("Could not write output\n");
 	
  	//	Read Response:

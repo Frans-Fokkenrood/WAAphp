@@ -35,12 +35,35 @@
 		echo '<tr><td class="label">Peildatum:</td><td><input name="peildatum" value="' . $json['werkgever']['peildatum'] . '"/></td></tr>' . "\n";
 		echo '<tr><td class="label">Militairen in dienst (ja/nee):</td><td><input name="militairenInDienst" value="' . $json['werkgever']['militairenInDienst'] . '"/></td></tr>' . "\n";
 	}	// end if
+	
+	if (isset($_POST['beslis'])) {
+		$json  = 'JSON:{"werkgever":{';
+		$json .= '"naam":"' . $_POST['naam'] . '",';
+		$json .= '"adres":"' . $_POST['adres'] . '",';
+		$json .= '"huisnummer":"' . $_POST['huisnummer'] . '",';
+		$json .= '"postcode":"' . $_POST['postcode'] . '",';
+		$json .= '"aantalWerknemers":"' . $_POST['aantalWerknemers'] . '",';
+		$json .= '"peildatum":"' . $_POST['peildatum'] . '",';
+		$json .= '"militairenInDienst":"' . $_POST['militairenInDienst'] . '",';
+		$json .= '}}' . "\n\n";
+	
+		$socket = socket_create(AF_INET, SOCK_STREAM, 0) or die("Could not create socket\n");
+		socket_connect($socket, "localhost", 8888) or die("Could not connect to socket\n");
+		//	Write Request:
+		socket_write($socket, $json) or die("Could not write output\n");
+		//	Read Response:
+		do {
+			$line = socket_read($socket, 512, PHP_NORMAL_READ) or die("Could not read input\n");
+			echo $line;
+		} while ($line != "\n");
+		socket_close($socket);
+	}	// end if
 ?>
 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr><td></td><td><input type="submit" name="haalop" value="Haal op"/>
 <?php
 	if (isset($_POST['haalop'])) {
-		echo ' &nbsp; <input type="submit" name="bewaar" value="Bewaar"/></td>';
+		echo ' &nbsp; <input type="submit" name="beslis" value="Beslis"/></td>';
 	}	// end if
 ?>
 </tr>
