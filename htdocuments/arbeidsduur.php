@@ -10,17 +10,17 @@
 <form id=phpForm action="" method="post">
 <table>
 <colgroup><col width="50%"/><col width="50%"/></colgroup>
-<tr><td class="label">Arbeidsovereenkomst, Datum indienen verzoek:</td><td><input name="identificaties" value="<?php echo isset($_POST['haalop']) ? $_POST['identificaties'] : ''; ?>"/></td></tr>
+<tr><td class="label">Arbeidsovereenkomst, Datum indienen verzoek:</td><td><input name="overeenkomst" value="<?php echo isset($_POST['haalop']) ? $_POST['overeenkomst'] : ''; ?>"/></td></tr>
 <?php 
-	if (isset($_POST['identificaties'])) {
-		$result = mysqli_query($dbconn, "SELECT id, content FROM arbeidsduur WHERE name = '" . str_replace(' ', '', $_POST['identificaties']) . "'");
+	if (isset($_POST['overeenkomst'])) {
+		$result = mysqli_query($dbconn, "SELECT id, content FROM arbeidsduur WHERE name = '" . str_replace(' ', '', $_POST['overeenkomst']) . "'");
 		$row = mysqli_fetch_array($result);
 		if ($row) {
 			$uuid = $row[0];
 			$json = json_decode($row[1], true);
 		} else {
 			$uuid = '';
-			echo '<tr><td></td><td class="fout">Arbeidsovereenkomst,datumIndienenVerzoek combi ' . $_POST['identificaties'] . ' onbekend!</td></tr>' . "\n";
+			echo '<tr><td></td><td class="fout">Arbeidsovereenkomst,datumIndienenVerzoek combi ' . $_POST['overeenkomst'] . ' onbekend!</td></tr>' . "\n";
 			unset($_POST['haalop']);
 		}	// end if
 		mysqli_free_result($result);
@@ -91,10 +91,10 @@
 <tr><td></td><td><input type="submit" name="haalop" value="Haal op"/>
 <?php
 	if (isset($_POST['haalop'])) {
-		echo ' &nbsp; <input type="submit" name="beslis" value="Beslis"/></td>';
+		echo ' &nbsp; <input type="submit" name="beslis" value="Beslis"/>';
 	}	// end if
 ?>
-</tr>
+</td></tr>
 </table>
 <input type="hidden" name="uuid"    value="<?php echo $uuid; ?>"/>
 <input type="hidden" name="moment"  value="<?php echo $moment; ?>"/>

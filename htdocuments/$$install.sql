@@ -66,3 +66,19 @@ CREATE TABLE arbeidsduur
 CREATE INDEX id_ix ON arbeidsduur (id);
 ALTER TABLE arbeidsduur DROP PRIMARY KEY;
 
+
+DROP TABLE IF EXISTS spreiding;
+
+CREATE TABLE spreiding
+(
+	id				char(36)		NOT NULL,
+	name			varchar(64)		NOT NULL,
+	valid_begin		date			NOT NULL,
+	valid_end		date			NOT NULL,
+	content			text			NOT NULL,
+	
+	CONSTRAINT spreiding_pkey PRIMARY KEY (id)
+);
+
+CREATE INDEX id_ix ON spreiding (id);
+ALTER TABLE spreiding DROP PRIMARY KEY;

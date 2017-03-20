@@ -63,10 +63,10 @@
 <tr><td></td><td><input type="submit" name="haalop" value="Haal op"/>
 <?php
 	if (isset($_POST['haalop'])) {
-		echo ' &nbsp; <input type="submit" name="beslis" value="Beslis"/></td>';
+		echo ' &nbsp; <input type="submit" name="beslis" value="Beslis"/>';
 	}	// end if
 ?>
-</tr>
+</td></tr>
 </table>
 <input type="hidden" name="uuid"    value="<?php echo $uuid; ?>"/>
 <input type="hidden" name="moment"  value="<?php echo $moment; ?>"/>
